@@ -39,7 +39,7 @@ export default function JumpTo({ recordMap, rootPageId }: Props) {
                 onClick={() => router.push(`/${page.id}`)} 
                 className="text-left text-sm text-gray-300 hover:text-white hover:bg-gray-800 p-2 rounded transition-all truncate"
               >
-                {page.properties?.title?.[0]?.[0] || 'Untitled Page'}
+                {page.properties?.title?.map(chunk => chunk[0]).join('') || 'Untitled Page'}
               </button>
             ))}
           </div>
